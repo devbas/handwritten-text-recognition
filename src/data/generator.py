@@ -144,14 +144,15 @@ class Tokenizer():
 
         groups = ["".join(group) for _, group in groupby(text)]
         text = "".join([self.UNK_TK.join(list(x)) if len(x) > 1 else x for x in groups])
-        encoded = []
+        return text 
+        # encoded = []
 
-        for item in text:
-            index = self.chars.find(item)
-            index = self.UNK if index == -1 else index
-            encoded.append(index)
+        # for item in text:
+        #    index = self.chars.find(item)
+        #    index = self.UNK if index == -1 else index
+        #    encoded.append(index)
 
-        return np.array(encoded).astype('float32')
+        # return np.array(encoded)
 
     def decode(self, text):
         """Decode vector to text"""
