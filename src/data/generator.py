@@ -151,7 +151,7 @@ class Tokenizer():
             index = self.UNK if index == -1 else index
             encoded.append(index)
 
-        return np.asarray(encoded)
+        return encoded
 
     def decode(self, text):
         """Decode vector to text"""
